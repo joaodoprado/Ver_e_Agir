@@ -15,13 +15,17 @@
         </header>
         
         <div class="enviarImagem" id="enviarImagem">
-            <img src="../images/pngwing.com.png" alt="Botão para carregar imagem.">
+            <img src="../images/pngwing.com.png" alt="Botão para carregar imagem." onclick="openCamera()">
             <p onclick="openCamera()">Carregar Imagem</p>
         </div>
+        
         <div id="cameraContainer" class="hidden">
-            <video id="cameraView" autoplay></video>
-            <button onclick="takePhoto()">Tirar Foto</button>
+            <video id="cameraView" autoplay playsinline></video>
+            <button onclick="takePhoto()">Capturar</button>
+            <button onclick="switchCamera()">Alternar Câmera</button>
+            <button onclick="closeCamera()">Fechar Câmera</button>
         </div>
+        
         <form>
             <div class="form-group">
                 <label for="latitude"></label>
