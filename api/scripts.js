@@ -51,6 +51,7 @@ function closeCamera() {
 }
 
 // Função para tirar uma foto
+// Função para tirar uma foto
 function takePhoto() {
     if (videoStream) {
         console.log('takePhoto chamado');
@@ -91,3 +92,5 @@ function takePhoto() {
         document.getElementById('cameraContainer').style.display = 'none';
     }
 }
+
+
