@@ -13,16 +13,30 @@
             <h1>Ver&Agir</h1>
         </header>
         
-        <img src="../images/iconbutton.jpeg" alt="">
+        <div class="enviarImagem">
+            <img src="../images/pngwing.com.png" alt="Botão para carregar imagem.">
+            <p>Carregar Imagem</p>
+        </div>
         <form>
             <div class="form-group">
-                <label for="tipoDeSolicitacao">Tipo de Solicitação:</label>
-                <select name="tipoDeSolicitacao" id="tipoDeSolicitacao">
-                    <option value=""selected></option>
-                <option value="01">Poste Danificado</option>
-            </select>
+                <label for="latitude"></label>
+                <input type="text" placeholder="latitude" class="latitude">
+
+                <label for="longitude"></label>
+                <input type="text" placeholder="longitude" class="longitude">
+
+                <label for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao"></textarea>
             </div>
-            <button type="submit">Enviar</button>
+            <div class="center">
+                <button class="btn">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                    </svg>
+                    <span>Enviar</span>
+                </button>
+            </div>
         </form>
     </main>
 
