@@ -2,12 +2,12 @@
 
 let videoStream = null; // Variável para armazenar o stream de vídeo
 
-// Função para abrir a câmera
+// Função para abrir a câmera traseira
 function openCamera() {
     // Verifica se o navegador suporta o acesso à câmera
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-        // Solicita acesso à câmera
-        navigator.mediaDevices.getUserMedia({ video: true })
+        // Solicita acesso à câmera traseira
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
             .then(function(stream) {
                 // Armazena o stream de vídeo globalmente
                 videoStream = stream;
@@ -17,10 +17,10 @@ function openCamera() {
                 // Exibe o stream no elemento de vídeo
                 const videoElement = document.getElementById('cameraView');
                 videoElement.srcObject = stream;
-                console.log('Câmera aberta com sucesso!');
+                console.log('Câmera traseira aberta com sucesso!');
             })
             .catch(function(error) {
-                console.error('Erro ao abrir a câmera:', error);
+                console.error('Erro ao abrir a câmera traseira:', error);
             });
     } else {
         console.error('Acesso à câmera não suportado pelo navegador.');
