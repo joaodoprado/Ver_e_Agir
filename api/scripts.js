@@ -21,6 +21,20 @@ function openCamera() {
                 videoElement.srcObject = stream;
                 videoElement.play();
                 console.log('Câmera aberta com sucesso!');
+
+                // Obter coordenadas de geolocalização
+                if ('geolocation' in navigator) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        const latitudeField = document.querySelector('.latitude');
+                        const longitudeField = document.querySelector('.longitude');
+                        latitudeField.value = position.coords.latitude.toFixed(6);
+                        longitudeField.value = position.coords.longitude.toFixed(6);
+                    }, function(error) {
+                        console.error('Erro ao obter a localização:', error);
+                    });
+                } else {
+                    console.error('Geolocalização não suportada pelo navegador.');
+                }
             })
             .catch(function(error) {
                 console.error('Erro ao abrir a câmera:', error);
@@ -69,6 +83,20 @@ function takePhoto() {
         const imagePreview = document.getElementById('imagePreview');
         imagePreview.innerHTML = '';
         imagePreview.appendChild(capturedImage);
+
+        // Obtém coordenadas de geolocalização
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const latitudeField = document.querySelector('.latitude');
+                const longitudeField = document.querySelector('.longitude');
+                latitudeField.value = position.coords.latitude.toFixed(6);
+                longitudeField.value = position.coords.longitude.toFixed(6);
+            }, function(error) {
+                console.error('Erro ao obter a localização:', error);
+            });
+        } else {
+            console.error('Geolocalização não suportada pelo navegador.');
+        }
 
         videoElement.srcObject = null;
         videoStream.getTracks().forEach(track => track.stop());
