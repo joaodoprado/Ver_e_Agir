@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ver&Agir</title>
     <link rel="stylesheet" href="../estilos/styles.css">
     <script src="../api/scripts.js" type="text/javascript" defer></script>
 </head>
@@ -15,14 +15,15 @@
         </header>
         
         <div class="enviarImagem" id="enviarImagem">
-            <img src="../images/pngwing.com.png" alt="Botão para carregar imagem.">
+            <img src="../images/pngwing.com.png" alt="Botão para carregar imagem." onclick="openCamera()">
             <p onclick="openCamera()">Carregar Imagem</p>
         </div>
         
-        <!-- Container para o vídeo da câmera -->
         <div id="cameraContainer" class="hidden">
             <video id="cameraView" autoplay playsinline></video>
             <button onclick="takePhoto()">Capturar</button>
+            <button onclick="switchCamera()">Alternar Câmera</button>
+            <button onclick="closeCamera()">Fechar Câmera</button>
         </div>
         
         <form>

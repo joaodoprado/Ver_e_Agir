@@ -64,8 +64,11 @@ function takePhoto() {
         const capturedImage = document.createElement('img');
         capturedImage.src = photoDataURL;
         capturedImage.style.width = '100%';
-        document.getElementById('cameraContainer').innerHTML = '';
-        document.getElementById('cameraContainer').appendChild(capturedImage);
+
+        // Mostra a imagem capturada no campo de pré-visualização
+        const imagePreview = document.getElementById('imagePreview');
+        imagePreview.innerHTML = '';
+        imagePreview.appendChild(capturedImage);
 
         videoElement.srcObject = null;
         videoStream.getTracks().forEach(track => track.stop());
