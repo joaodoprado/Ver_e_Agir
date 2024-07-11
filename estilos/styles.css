@@ -11,32 +11,30 @@ body {
 main {
     width: 100%;
     max-width: 500px;
-    background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     box-sizing: border-box;
     flex-grow: 1;
     background-image: url(../images/pexels-oandremoura-2402438.jpg);
-    background-position: center bottom;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 50px); 
+    margin-bottom: 0px;
 }
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 0;
     z-index: 1000;
     box-sizing: border-box;
+    width: 100%;
 }
 
 header img {
@@ -45,9 +43,10 @@ header img {
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
     color: white;
+    text-align: center;
 }
 
 form .form-group {
@@ -171,12 +170,36 @@ footer {
     color: white;
     background: blue;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px 8px 0 0;
+    border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    height: 16px;
+    height: 12px;
 }
 
 footer p {
-    position: relative;
-    bottom: 0.9em;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header img {
+        max-width: 40px;
+    }
+
+    .btn {
+        width: 140px;
+        height: 50px;
+    }
+
+    .btn span {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 0.6rem;
+    }
 }
