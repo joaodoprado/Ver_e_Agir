@@ -27,10 +27,16 @@ main {
 }
 
 header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    padding: 10px 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 header img {
@@ -160,7 +166,7 @@ footer {
     max-width: 500px;
     padding: 0;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: bolder;
     color: white;
     background: blue;
@@ -174,4 +180,3 @@ footer p {
     position: relative;
     bottom: 0.9em;
 }
-
