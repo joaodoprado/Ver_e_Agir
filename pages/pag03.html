@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../estilos/styles.css">
+    <script src="../api/scripts.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <main>
+    <main class="main-pag03">
         <header>
             <img src="../images/logoprogeo.png" alt="logo_progeo">
             <h1>Ver&Agir</h1>
         </header>
         
-        <div class="enviarImagem">
+        <div class="enviarImagem" id="enviarImagem">
             <img src="../images/pngwing.com.png" alt="Botão para carregar imagem.">
-            <p>Carregar Imagem</p>
+            <p onclick="openCamera()">Carregar Imagem</p>
+        </div>
+        <div id="cameraContainer" class="hidden">
+            <video id="cameraView" autoplay></video>
+            <button onclick="takePhoto()">Tirar Foto</button>
         </div>
         <form>
             <div class="form-group">
