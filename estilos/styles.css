@@ -1,4 +1,3 @@
-
 .hidden {
     display: none;
 }
@@ -31,27 +30,6 @@ main {
     min-height: calc(100vh - 50px);
     margin-bottom: 0px;
 }
-
-.main-index, .main-pag02 {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    padding-bottom: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    box-sizing: border-box;
-    flex-grow: 1;
-    background-image: url(../images/pexels-oandremoura-2402438.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: calc(100vh - 50px);
-    margin-bottom: 0px;
-}
-
 
 #cameraContainer {
     position: fixed;
@@ -105,8 +83,6 @@ main {
     padding: 20px; /* Adicionado padding para espaçamento interno */
     box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
 }
-
-
 
 header {
     display: flex;
