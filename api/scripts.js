@@ -51,7 +51,6 @@ function closeCamera() {
 }
 
 // Função para tirar uma foto
-// Função para tirar uma foto
 function takePhoto() {
     if (videoStream) {
         console.log('takePhoto chamado');
@@ -68,16 +67,24 @@ function takePhoto() {
 
         // Mostra a imagem capturada no campo de pré-visualização
         const imagePreview = document.getElementById('imagePreview');
-        imagePreview.innerHTML = '';
-        imagePreview.appendChild(capturedImage);
+        if (imagePreview) {
+            imagePreview.innerHTML = '';
+            imagePreview.appendChild(capturedImage);
+        } else {
+            console.error('Elemento imagePreview não encontrado.');
+        }
 
         // Obtém coordenadas de geolocalização
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 const latitudeField = document.querySelector('.latitude');
                 const longitudeField = document.querySelector('.longitude');
-                latitudeField.value = position.coords.latitude.toFixed(6);
-                longitudeField.value = position.coords.longitude.toFixed(6);
+                if (latitudeField && longitudeField) {
+                    latitudeField.value = position.coords.latitude.toFixed(6);
+                    longitudeField.value = position.coords.longitude.toFixed(6);
+                } else {
+                    console.error('Campos de latitude e/ou longitude não encontrados.');
+                }
             }, function(error) {
                 console.error('Erro ao obter a localização:', error);
             });
@@ -92,5 +99,3 @@ function takePhoto() {
         document.getElementById('cameraContainer').style.display = 'none';
     }
 }
-
-
