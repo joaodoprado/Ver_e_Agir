@@ -45,6 +45,15 @@ main {
     z-index: 1000; /* Garante que fique acima dos outros elementos */
 }
 
+#imagePreview {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #cameraView {
     width: 400px;
     height: 700px;

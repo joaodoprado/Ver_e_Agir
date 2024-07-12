@@ -67,11 +67,13 @@ function takePhoto() {
 
         // Mostra a imagem capturada no campo de pré-visualização
         const imagePreview = document.getElementById('imagePreview');
-        if (imagePreview) {
+        const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+        if (imagePreview && imagePreviewContainer) {
             imagePreview.innerHTML = '';
             imagePreview.appendChild(capturedImage);
+            imagePreviewContainer.classList.remove('hidden');
         } else {
-            console.error('Elemento imagePreview não encontrado.');
+            console.error('Elemento imagePreview ou imagePreviewContainer não encontrado.');
         }
 
         // Obtém coordenadas de geolocalização
@@ -97,5 +99,27 @@ function takePhoto() {
         videoStream = null;
         document.getElementById('enviarImagem').style.display = 'block';
         document.getElementById('cameraContainer').style.display = 'none';
+    }
+}
+
+// Função para descartar a foto
+function discardPhoto() {
+    const imagePreview = document.getElementById('imagePreview');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+    if (imagePreview && imagePreviewContainer) {
+        imagePreview.innerHTML = '';
+        imagePreviewContainer.classList.add('hidden');
+    } else {
+        console.error('Elemento imagePreview ou imagePreviewContainer não encontrado.');
+    }
+
+    // Limpa os campos de latitude e longitude
+    const latitudeField = document.querySelector('.latitude');
+    const longitudeField = document.querySelector('.longitude');
+    if (latitudeField && longitudeField) {
+        latitudeField.value = '';
+        longitudeField.value = '';
+    } else {
+        console.error('Campos de latitude e/ou longitude não encontrados.');
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver&Agir</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../estilos/styles.css">
     <script src="../api/scripts.js" type="text/javascript" defer></script>
 </head>
@@ -25,7 +25,14 @@
             <button onclick="switchCamera()">Alternar Câmera</button>
             <button onclick="closeCamera()">Fechar Câmera</button>
         </div>
-        
+
+        <!-- Contêiner para a pré-visualização da imagem -->
+        <div id="imagePreviewContainer" class="hidden">
+            <h2>Imagem Capturada:</h2>
+            <div id="imagePreview"></div>
+            <button id="discardButton" onclick="discardPhoto()">Descartar</button>
+        </div>
+
         <form>
             <div class="form-group">
                 <label for="latitude"></label>
@@ -36,9 +43,6 @@
 
                 <label for="descricao">Descrição</label>
                 <textarea name="descricao" id="descricao"></textarea>
-                
-                <!-- Campo para visualização da imagem capturada -->
-                <div id="imagePreview"></div>
             </div>
             <div class="center">
                 <button class="btn">
