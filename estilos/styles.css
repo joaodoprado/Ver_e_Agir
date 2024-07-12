@@ -5,7 +5,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Full height of the viewport */
     align-items: center;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,10 +13,10 @@ body {
 }
 
 main {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow main to grow and fill available space */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Center content vertically */
     align-items: center;
     width: 100%;
     max-width: 500px;
@@ -34,7 +34,7 @@ footer {
     position: relative;
     width: 100%;
     max-width: 500px;
-    padding: 10px;
+    padding: 10px; /* Adjust padding as needed */
     text-align: center;
     font-size: 0.7rem;
     font-weight: bolder;
@@ -59,12 +59,12 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    display: none; /* Inicialmente oculto */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    z-index: 1000;
+    background-color: black; /* Cor de fundo para o vídeo */
+    z-index: 1000; /* Garante que fique acima dos outros elementos */
 }
 
 #imagePreview {
@@ -79,8 +79,8 @@ footer p {
 #cameraView {
     width: 400px;
     height: 700px;
-    object-fit: cover;
-    border-radius: 8px;
+    object-fit: cover; /* Garante que o vídeo preencha o contêiner */
+    border-radius: 8px; /* Adiciona bordas arredondadas para um visual mais elegante */
 }
 
 #cameraContainer button {
@@ -112,25 +112,14 @@ footer p {
     background-color: white;
 }
 
-.main-pag03 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    position: relative;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 header {
     display: flex;
+    position: relative;
+    bottom: 28vh;
     align-items: center;
     justify-content: center;
     padding: 5px;
+    z-index: 1000;
     box-sizing: border-box;
     width: 100%;
     max-width: 450px;
@@ -138,7 +127,34 @@ header {
     background-color: rgba(234, 221, 221, 0.24);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+}
+
+.pag03 {
+    display: flex;
+    position: relative;
+    bottom: 5vh;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 20px;
+    background-color: rgba(234, 221, 221, 0.24);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pag03 img {
+    max-width: 60px;
+    margin-right: 10px;
+}
+
+.pag03 h1 {
+    font-size: 2em;
+    margin: 0;
+    color: white;
+    text-align: center;
 }
 
 header img {
@@ -163,17 +179,24 @@ form label {
     font-weight: bold;
 }
 
-form input, form select, form textarea {
+form, input, select, textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px; /* Arredonda os cantos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+}
+
+.coordinate-group {
+    display: flex;
+    gap: 10px;
 }
 
 .latitude, .longitude {
     width: 45%;
+    background-color: rgba(255, 255, 255, 0.322);
+    cursor: not-allowed;
 }
 
 .latitude {
@@ -199,7 +222,7 @@ textarea {
     background: #0984ff;
     border: 1px solid #91C9FF;
     outline: none;
-    transition: 1s ease-in-out;
+    transition: 400ms ease-in-out;
     position: relative;
     border-radius: 15px;
     text-decoration: none;
@@ -207,34 +230,41 @@ textarea {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    fill: none;
-    stroke: #fff;
-    stroke-dasharray: 150 480;
-    stroke-dashoffset: 150;
-    transition: 1s ease-in-out;
+    
 }
 
 .btn:hover {
     background: blue;
-}
-
-.btn:hover svg {
-    stroke-dashoffset: -480;
+    transition: 800ms;
 }
 
 .btn span {
     color: white;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: bolder;
     position: relative;
     z-index: 1;
 }
+
+#discardButton {
+    width: auto;
+    text-align: center;
+    align-content: center;
+    margin-left: 40%;
+    cursor: pointer;
+    background: #ff0000fb;
+    border: 1px solid #000000;
+    transition: 400ms ease-in-out;
+    border-radius: 10%;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+}
+
 
 .enviarImagem {
     background-color: rgb(211, 207, 207);
@@ -273,6 +303,14 @@ svg {
 }
 
 @media (max-width: 600px) {
+    .pag03 h1 {
+        font-size: 1.5em;
+    }
+
+    .pag03 img {
+        max-width: 40px;
+    }
+
     header h1 {
         font-size: 1.5em;
     }
