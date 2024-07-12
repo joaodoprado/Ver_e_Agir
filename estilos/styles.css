@@ -5,30 +5,52 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
+    align-items: center;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 
 main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 500px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     box-sizing: border-box;
-    flex-grow: 1;
     background-image: url(../images/pexels-oandremoura-2402438.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: calc(100vh - 50px);
-    margin-bottom: 0px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    color: white;
+    background: blue;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    height: 0.1em;
+}
+
+footer p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    bottom: 6px;
 }
 
 #cameraContainer {
@@ -37,12 +59,12 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    display: none; /* Inicialmente oculto */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black; /* Cor de fundo para o vídeo */
-    z-index: 1000; /* Garante que fique acima dos outros elementos */
+    background-color: black;
+    z-index: 1000;
 }
 
 #imagePreview {
@@ -57,8 +79,8 @@ main {
 #cameraView {
     width: 400px;
     height: 700px;
-    object-fit: cover; /* Garante que o vídeo preencha o contêiner */
-    border-radius: 8px; /* Adiciona bordas arredondadas para um visual mais elegante */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 #cameraContainer button {
@@ -75,8 +97,19 @@ main {
     background-color: blue;
 }
 
-.hidden {
-    display: none;
+.main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: white;
 }
 
 .main-pag03 {
@@ -88,22 +121,24 @@ main {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    position: relative; /* Adicionado para posicionamento relativo */
-    padding: 20px; /* Adicionado padding para espaçamento interno */
-    box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
-    z-index: 1000;
+    padding: 5px;
     box-sizing: border-box;
     width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
     background-color: rgba(234, 221, 221, 0.24);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 header img {
@@ -128,13 +163,13 @@ form label {
     font-weight: bold;
 }
 
-form input, select, textarea {
+form input, form select, form textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Arredonda os cantos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .latitude, .longitude {
@@ -237,27 +272,6 @@ svg {
     width: 100%;
 }
 
-footer {
-    width: 100%;
-    max-width: 500px;
-    padding: 0;
-    text-align: center;
-    font-size: 0.7rem;
-    font-weight: bolder;
-    color: white;
-    background: blue;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 8px 8px;
-    box-sizing: border-box;
-    height: 12px;
-}
-
-footer p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Media Queries para responsividade */
 @media (max-width: 600px) {
     header h1 {
         font-size: 1.5em;
