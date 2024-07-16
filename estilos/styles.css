@@ -194,14 +194,9 @@ form, input, select, textarea {
 }
 
 .latitude, .longitude {
-    width: 45%;
+    flex: 1; /* Distribui o espaço disponível igualmente entre latitude e longitude */
     background-color: rgba(255, 255, 255, 0.322);
     cursor: not-allowed;
-}
-
-.latitude {
-    float: left;
-    margin-right: 10%;
 }
 
 textarea {
